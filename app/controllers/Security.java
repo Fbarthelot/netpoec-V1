@@ -5,8 +5,8 @@ import services.UserService;
 
 public class Security extends Secure.Security {
 
-    static boolean authenticate(String username, String password) {
-        User user = UserService.getByEmail(username);
+    static boolean authenticate(String userMail, String password) {
+        User user = UserService.getByEmail(userMail);
         if (user == null) {
             return false;
         }

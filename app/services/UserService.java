@@ -1,28 +1,30 @@
 package services;
 
 
+import controllers.Secure;
+import controllers.Security;
 import models.User;
+import play.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
 
-    private static List<User> users;
+    private static final String LOG_PREFIX = "ArticleService";
 
-//    static {
-//        users =new ArrayList<User>();
-//        users.add(createUser("nicolas.giard@coaxys.com", "test", "Nicolas", "Giard"));
-//        users.add(createUser("luke.skywalker@coaxys.com", "test", "Luke", "Skywalker"));
-//    }
 
-    public static void createUser(String email, String password, String firstName, String lastName) {
+    public static int createUser(String email, String password, String firstName, String lastName) {
         User user = new User();
         user.email = email;
         user.password = password;
         user.firstName = firstName;
         user.lastName = lastName;
-        user.save();
+        user=user.save();
+        if(user==null){
+            return 0;
+        }
+        return 1;
     }
 
     public static User getByEmail(String email) {
@@ -30,4 +32,9 @@ public class UserService {
 
     }
 
+    public static User getById(Long id) {
+        Logger.debug("%s : getById [%s]", LOG_PREFIX, id);
+
+        return User.findById(id);
+    }
 }

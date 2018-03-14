@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'NetPOEC' /}
+<header>
+    <div class="col-xs-12"><h1 class="text-center"> NetPoec</h1></div>
+    <div class="col-xs-12"><h2 class="text-center">Bonjour ${user.firstName}</h2></div>
+</header>
+
+<a href="@{UserController.index()}">&lt; Retour</a>
+
+<main class="container col-xs-12 col-md-8 col-md-offset-2 clearfix">
+    <div class="row">
+     <ul>
+         <li>${user.firstName}</li>
+         <li>${user.lastName}</li>
+         <li>${user.email}</li>
+         <li><a href="@{Application.addUser()}" class="btn btn-default connexion center-block">Modifier le mot de passe</a></li>
+     </ul>
+    </div>
+</main>
+<footer>
+
+</footer>

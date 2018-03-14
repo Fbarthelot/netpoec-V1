@@ -1,11 +1,77 @@
-User(user1):
+User(user21):
   email: nicolas.giard@coaxys.com
   password: test
   firstName: nicolas
   lastName: giard
 
-User(user2):
+User(user22):
   email: luke.skywalker@coaxys.com
   password: test
   firstName: luke
   lastName: skywalker
+
+User(user1):
+  email: colard.matheo@gmail.com
+  password: matheo
+  firstName: matheo
+  lastName: colard
+
+User(user2):
+  email: lepere.stephane@gmail.com
+  password: stephane
+  firstName: stephane
+  lastName: lepere
+
+User(user3):
+  email: navarette.rayan@gmail.com
+  password: rayan
+  firstName: rayan
+  lastName: navarette
+
+User(user4):
+  email: san.noemi@gmail.com
+  password: noemi
+  firstName: noemi
+  lastName: san
+
+User(user5):
+  email: chretien.natasha@aol.fr
+  password: natasha
+  firstName: natasha
+  lastName: chretien
+
+User(user6):
+  email: tavares.cyndi@gmail.com
+  password: cyndi
+  firstName: cyndi
+  lastName: tavares
+
+User(user7):
+  email: amandola.gaston@caramail.com
+  password: gaston
+  firstName: gaston
+  lastName: amandola
+
+User(user8):
+  email: doe.john@yahoo.fr
+  password: john
+  firstName: john
+  lastName: doe
+
+User(user9):
+  email: paumard.kevin@free.fr
+  password: kevin
+  firstName: kevin
+  lastName: paumard
+
+User(user10):
+  email: kesako.martine@gmail.com
+  password: martine
+  firstName: martine
+  lastName: kesako
+
+User(user11):
+  email: dutronc.james@orange.fr
+  password: james
+  firstName: james
+  lastName: dutronc

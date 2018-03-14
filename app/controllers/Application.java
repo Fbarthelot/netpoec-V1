@@ -23,9 +23,13 @@ public class Application extends Controller {
         render();
     }
     public static void saveNewUser(String email, String password, String firstName, String lastName){
-        UserService.createUser(email, password, firstName, lastName);
+        int result=UserService.createUser(email, password, firstName, lastName);
+        if(result==1){
+            Security.authenticate(email, password);
+            UserController.index();
+        }
 
-        index();
+        addUser();
     }
 
 }
