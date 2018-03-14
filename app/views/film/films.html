@@ -1,0 +1,31 @@
+#{extends 'main.html' /}
+#{set title:'NetPOEC' /}
+
+<header>
+    <div class="col-xs-12"><h1 class="text-center"> NetPoec</h1></div>
+
+</header>
+<main class="container col-xs-12 col-md-8 col-md-offset-2 clearfix">
+<div class="films clearfixe">
+
+</div>
+    <div>
+        <a id="btn-film" class="btn center-block">Afficher plus de filmes</a>
+    </div>
+</main>
+
+<footer>
+
+</footer>
+#{set 'moreScripts'}
+<script>
+$( document ).ready(function() {
+    $("#btn-film").on('click',function(){
+    readFilm();
+      i=i+6;
+
+    });
+
+});
+</script>
+#{/set}
