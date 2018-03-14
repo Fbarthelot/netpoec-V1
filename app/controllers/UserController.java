@@ -33,6 +33,11 @@ public class UserController extends Controller{
         userProfil(user);
     }
 
+    public static void  saveNewPassword(User user,String password){
+        UserService.saveNewPassord(user,password);
+
+        userProfil(user);
+    }
 
 
 

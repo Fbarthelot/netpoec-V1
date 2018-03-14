@@ -13,6 +13,8 @@ POST    /UserController/                        Application.saveNewUser
 # UserController
 GET     /UserController/                        UserController.index
 GET     /UserController/userProfil              UserController.detailUser
+POST    /UserController/userProfil/newPass     UserController.saveNewPassword
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

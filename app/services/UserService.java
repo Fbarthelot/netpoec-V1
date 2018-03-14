@@ -37,4 +37,16 @@ public class UserService {
 
         return User.findById(id);
     }
+
+    public static void saveNewPassord(User user,String password) {
+
+        User newUser = new User();
+        newUser.email = user.email;
+        newUser.password = password;
+        newUser.firstName = user.firstName;
+        newUser.lastName = user.lastName;
+        user.delete();
+        newUser.save();
+
+    }
 }
