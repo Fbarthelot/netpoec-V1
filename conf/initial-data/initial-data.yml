@@ -1,0 +1,11 @@
+User(user1):
+  email: nicolas.giard@coaxys.com
+  password: test
+  firstName: nicolas
+  lastName: giard
+
+User(user2):
+  email: luke.skywalker@coaxys.com
+  password: test
+  firstName: luke
+  lastName: skywalker
