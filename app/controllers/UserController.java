@@ -2,6 +2,7 @@ package controllers;
 
 import play.mvc.Controller;
 import play.mvc.With;
+import services.UserService;
 
 @With(Secure.class)
 public class UserController extends Controller{
@@ -10,4 +11,7 @@ public class UserController extends Controller{
         render();
     }
 
-    }
+
+
+
+}

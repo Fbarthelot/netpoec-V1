@@ -1,5 +1,21 @@
 #{extends 'main.html' /}
 #{set title:'NetPOEC' /}
 
-<h1>NetPOEC</h1>
-<a href="@{Application.index()}"> Connexion</a>
+<header>
+    <div class="col-xs-12"><h1 class="text-center"> NetPoec</h1></div>
+
+</header>
+<main class="container col-xs-12 col-md-8 col-md-offset-2 clearfix">
+    <div class="row col-xs-12 ">
+        <p> Vous possedez déjà un compte:</p>
+        <a class="btn btn-default connexion center-block" href="@{Application.connexion()}"> Connexion</a>
+    </div>
+    <div class="row col-xs-12 ">
+        <p> Vous ne possedez pas de compte:</p>
+        <a href="@{Application.addUser()}" class="btn btn-default connexion center-block">Créer un nouveau compte</a>
+    </div>
+</main>
+
+<footer>
+
+</footer>

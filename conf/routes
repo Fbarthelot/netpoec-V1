@@ -4,8 +4,15 @@
 
 
 *       /                                       module:secure
+
 # Home page
 GET     /                                       Application.index
+GET     /addUser                                Application.addUser
+POST    /UserController/                        Application.saveNewUser
+
+# UserController
+GET     /UserController/                        UserController.index
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

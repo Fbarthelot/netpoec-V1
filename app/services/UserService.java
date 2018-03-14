@@ -16,13 +16,13 @@ public class UserService {
 //        users.add(createUser("luke.skywalker@coaxys.com", "test", "Luke", "Skywalker"));
 //    }
 
-    public static User createUser(String email, String password, String firstName, String lastName) {
+    public static void createUser(String email, String password, String firstName, String lastName) {
         User user = new User();
         user.email = email;
         user.password = password;
         user.firstName = firstName;
         user.lastName = lastName;
-        return user;
+        user.save();
     }
 
     public static User getByEmail(String email) {
