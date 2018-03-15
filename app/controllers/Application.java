@@ -1,17 +1,12 @@
 package controllers;
 
-import play.*;
-import play.mvc.*;
-
-import java.util.*;
-
-import models.*;
+import play.mvc.Controller;
 import services.UserService;
 
 public class Application extends Controller {
 
     public static void index() {
-        Security.isConnected();
+
         render();
     }
 
@@ -24,6 +19,7 @@ public class Application extends Controller {
     }
     public static void saveNewUser(String email, String password, String firstName, String lastName){
         int result=UserService.createUser(email, password, firstName, lastName);
+
         if(result==1){
 
             session.put("username",email);

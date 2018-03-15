@@ -9,8 +9,9 @@ import java.util.List;
 
 @With(Secure.class)
 public class UserController extends Controller{
-    public static void index() {
 
+    public static void index() {
+        Security.isConnected();
         render();
     }
 
@@ -24,18 +25,19 @@ public class UserController extends Controller{
         String[] mailList=session.split("username=");
         String mail=mailList[1];
         String mail2=mail.replace("%40","@");
-        System.out.println(mail2);
+
 
         User user = UserService.getByEmail(mail2);
         if (user == null) {
-            render();
+            index();
         }
         userProfil(user);
     }
 
     public static void  saveNewPassword(User user,String password){
-        UserService.saveNewPassord(user,password);
-
+//        session.clear();
+        UserService.saveNewPassword(user,password);
+//        session.put("username",user.email);
         userProfil(user);
     }
 

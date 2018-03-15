@@ -10,17 +10,17 @@
 <main class="container col-xs-12 col-md-8 col-md-offset-2 clearfix">
     <div class="row">
      <ul style="list-style-type: none">
-         <li>${user.firstName}</li>
-         <li>${user.lastName}</li>
-         <li>${user.email}</li>
-         <li><a href="#" class="btn btn-default center-block" id="btnNewPassword" >Modifier le mot de passe</a></li>
+         <li>Prenon: ${user.firstName}</li>
+         <li>Nom: ${user.lastName}</li>
+         <li>Email: ${user.email}</li>
+         <li><a href="#"  class="btn btn-default  center-block col-xs-4" id="btnNewPassword" >Modifier le mot de passe</a></li>
      </ul>
     </div>
 
     <div id="panelNewPassword">
-        <h3>Modifier votre mot de passe</h3>
+        <h4>Modifier votre mot de passe</h4>
         <form action="@{UserController.saveNewPassword(user)}" method="post">
-            <input type="text" name="password" placeholder="mot de passe">
+            <input type="password" name="password" placeholder="mot de passe">
             <input type="submit" value="Modifier">
         </form>
     </div>

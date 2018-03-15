@@ -5,3 +5,13 @@
 #film-small{
 height:100%;
 }
+
+#filmContainer{
+margin-top: 50px;
+}
+
+.btn{
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
+}

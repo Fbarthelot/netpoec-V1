@@ -5,14 +5,15 @@
     <div class="col-xs-12"><h1 class="text-center"> NetPoec</h1></div>
 
 </header>
-<main class="container col-xs-12 col-md-8 col-md-offset-2 clearfix">
-    <div class="row col-xs-12 ">
-        <p> Vous possedez déjà un compte:</p>
-        <a class="btn btn-default center-block" href="@{Application.connexion()}"> Connexion</a>
+<main class="container col-xs-12 col-md-8 col-md-offset-4 clearfix">
+    <div class="row col-xs-12">
+        <label class="col-xs-12"> Vous possedez déjà un compte:</label>
+        <a class="btn btn-default center-block col-xs-6" href="@{Application.connexion()}"> Connexion</a>
     </div>
+
     <div class="row col-xs-12 ">
-        <p> Vous ne possedez pas de compte:</p>
-        <a href="@{Application.addUser()}" class="btn btn-default center-block">Créer un nouveau compte</a>
+        <label class="col-xs-12" > Vous ne possedez pas de compte:</label>
+        <a href="@{Application.addUser()}" class="btn btn-default center-block col-xs-6">Créer un nouveau compte</a>
     </div>
 </main>
 
