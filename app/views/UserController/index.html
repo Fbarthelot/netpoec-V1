@@ -1,6 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'NetPOEC' /}
+<header>
+    <div class="col-xs-12"><h1 class="text-center"> NetPoec</h1></div>
 
+</header>
+<main class="container col-xs-12 col-md-8 col-md-offset-2 clearfix">
     <div class="row col-xs-12 ">
 
         <a href="@{controllers.UserController.detailUser()}" class="btn btn-default center-block">Profil</a>
@@ -11,4 +15,8 @@
     </div>
 #{include 'film/films.html' /}
 
+</main>
 
+<footer>
+
+</footer>

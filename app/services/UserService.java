@@ -46,6 +46,7 @@ public class UserService {
         newUser.firstName = user.firstName;
         newUser.lastName = user.lastName;
         user.delete();
+//        user.delete("id= ?1",user.id);
         newUser.save();
 
     }

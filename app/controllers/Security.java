@@ -24,4 +24,9 @@ public class Security extends Secure.Security {
         }
         redirect(url);
     }
+
+    static void onDisconnected() {
+
+        redirect("Application.index");
+    }
 }
