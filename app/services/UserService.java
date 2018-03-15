@@ -35,19 +35,15 @@ public class UserService {
     }
 
     public static void saveNewPassword(User user,String password) {
-//        user.delete();
-//
-//        User newUser = new User();
-//        newUser.email = user.email;
-//        newUser.password = password;
-//        newUser.firstName = user.firstName;
-//        newUser.lastName = user.lastName;
-//
-//        newUser.save();
 
-            user.password=password;
-            user.save();
-            user.refresh();
+
+        User newUser = new User();
+        newUser.email = user.email;
+        newUser.password = password;
+        newUser.firstName = user.firstName;
+        newUser.lastName = user.lastName;
+        user.delete();
+        newUser.save();
 
     }
 }
