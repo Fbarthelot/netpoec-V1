@@ -1,6 +1,7 @@
 package controllers;
 
 import models.User;
+import play.Logger;
 import play.mvc.Controller;
 import play.mvc.With;
 import services.UserService;
@@ -15,12 +16,16 @@ public class UserController extends Controller{
         render();
     }
 
-    public static void userProfil(User user) {
+    public static void userProfil(Long id) {
+
+        User user=UserService.getById(id);
 
         render(user);
+
     }
 
     public static void detailUser() {
+
         String session= request.cookies.get("PLAY_SESSION").value.toString();
         String[] mailList=session.split("username=");
         String mail=mailList[1];
@@ -31,14 +36,17 @@ public class UserController extends Controller{
         if (user == null) {
             index();
         }
-        userProfil(user);
+        userProfil(user.id);
     }
 
-    public static void  saveNewPassword(User user,String password){
+    public static void  saveNewPassword(Long id,String password){
 //        session.clear();
-        UserService.saveNewPassword(user,password);
+
+       Long newID = UserService.saveNewPassword(id,password);
 //        session.put("username",user.email);
-        userProfil(user);
+        User user=UserService.getById(id);
+
+        userProfil(newID);
     }
 
 

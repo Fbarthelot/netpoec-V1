@@ -34,9 +34,8 @@ public class UserService {
         return User.findById(id);
     }
 
-    public static void saveNewPassword(User user,String password) {
-
-
+    public static Long saveNewPassword(Long id,String password) {
+        User user=UserService.getById(id);
         User newUser = new User();
         newUser.email = user.email;
         newUser.password = password;
@@ -45,5 +44,7 @@ public class UserService {
         user.delete();
         newUser.save();
 
+        User userSave=UserService.getByEmail(newUser.email);
+        return userSave.id;
     }
 }

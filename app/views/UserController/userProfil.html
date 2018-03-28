@@ -19,7 +19,7 @@
 
     <div id="panelNewPassword">
         <h4>Modifier votre mot de passe</h4>
-        <form action="@{UserController.saveNewPassword(user)}" method="post">
+        <form action="@{UserController.saveNewPassword(user.id)}" method="post">
             <input type="password" name="password" placeholder="mot de passe">
             <input type="submit" value="Modifier">
         </form>
