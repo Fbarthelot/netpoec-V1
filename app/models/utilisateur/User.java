@@ -1,4 +1,4 @@
-package models;
+package models.utilisateur;
 
 import play.db.jpa.Model;
 
@@ -11,5 +11,9 @@ public class User extends Model {
     public String password;
     public String firstName;
     public String lastName;
+//    public String apiKey;
+//
+//    public String privateApiKey;
+
 
 }

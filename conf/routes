@@ -15,6 +15,10 @@ GET     /UserController/                        UserController.index
 GET     /UserController/userProfil              UserController.detailUser
 POST    /UserController/userProfil/newPass      UserController.saveNewPassword
 
+POST    /api/connexion/                         api.UserApiController.loginUser
+POST    /api/connexion/userDelete               api.UserApiController.delete
+POST    /api/connexion/createUser               api.UserApiController.userCreate
+POST     /api/connexion/profil                   api.UserApiController.profil
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

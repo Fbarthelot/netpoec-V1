@@ -1,7 +1,7 @@
 package services;
 
 
-import models.User;
+import models.utilisateur.User;
 import play.Logger;
 
 public class UserService {
@@ -47,4 +47,6 @@ public class UserService {
         User userSave=UserService.getByEmail(newUser.email);
         return userSave.id;
     }
+
+
 }

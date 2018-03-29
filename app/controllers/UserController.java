@@ -1,12 +1,9 @@
 package controllers;
 
-import models.User;
-import play.Logger;
+import models.utilisateur.User;
 import play.mvc.Controller;
 import play.mvc.With;
 import services.UserService;
-
-import java.util.List;
 
 @With(Secure.class)
 public class UserController extends Controller{
