@@ -39,15 +39,15 @@ public class UserApiController extends Controller {
             if (user.password.equals(password)) {
                 Logger.info("loginUser.id %s", user.id.toString());
 
-                renderJSON("{\"messages\": \" ok\"}");
+                renderJSON("{\"messages\": \"ok\"}");
 
             } else {
 
-                renderJSON("{\"messages\": \" badPassword\"}");
+                renderJSON("{\"messages\": \"badPassword\"}");
             }
         }else{
 
-            renderJSON("{\"messages\": \" badEmail\"}");
+            renderJSON("{\"messages\": \"badEmail\"}");
         }
 
     }
