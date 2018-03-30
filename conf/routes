@@ -19,6 +19,7 @@ POST    /api/connexion/                         api.UserApiController.loginUser
 POST    /api/connexion/userDelete               api.UserApiController.delete
 POST    /api/connexion/createUser               api.UserApiController.userCreate
 POST    /api/connexion/profil                   api.UserApiController.profil
+POST    /api/connexion/password                 api.UserApiController.changedPassword
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

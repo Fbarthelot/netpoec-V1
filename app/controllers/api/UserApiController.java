@@ -6,6 +6,7 @@ import models.utilisateur.User;
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 import play.Logger;
 import play.mvc.Controller;
+import play.mvc.results.RenderJson;
 import services.UserService;
 
 import java.util.List;
@@ -13,16 +14,7 @@ import java.util.List;
 public class UserApiController extends Controller {
 
 
-//    public static void delete(Long id) {
-//        User user = UserService.getById(id);
-//        notFoundIfNull(user);
-//
-//
-//        UserService.deleteUser(user);
-//        renderText("Profil supprimé");
-//        } else {
-//            error("Ce profil n'existe pas");
-    //    }
+
 
     public static void loginUser() {
         String email = new Gson().fromJson(request.params.get("email"), String.class);
@@ -57,7 +49,40 @@ public class UserApiController extends Controller {
 
         user.delete();
 
-        renderText("Votre compte a été supprimé" + " " + profil + ". A bientot ");
+        renderText("userDelete ");
+
+    }
+
+    public static void userCreate(String email , String password, String firstname, String lastname){
+
+
+        User user = UserService.getByEmail(email);
+
+        if (user==null){
+
+            int client = UserService.createUser(email, password, firstname, lastname);
+            Logger.info("userCreate.email %s", email);
+
+            renderText("userCreate");
+
+
+        }else{renderText("userExist");}
+
+
+
+    }
+
+    public static void changedPassword(String email){
+
+        User newUser = UserService.getByEmail(email);
+
+//        if (user==null){
+
+        renderJSON(newUser);
+
+
+//        }else{renderText("userExist");}
+
 
     }
 
