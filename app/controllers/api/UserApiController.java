@@ -1,6 +1,7 @@
 package controllers.api;
 
 import com.google.gson.Gson;
+import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
 import models.adapters.UserAdapter;
 import models.utilisateur.User;
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
@@ -17,6 +18,8 @@ public class UserApiController extends Controller {
 
 
     public static void loginUser() {
+
+
         String email = new Gson().fromJson(request.params.get("email"), String.class);
         String password = new Gson().fromJson(request.params.get("password"), String.class);
         Logger.info("loginUser.email %s", email);
@@ -27,15 +30,16 @@ public class UserApiController extends Controller {
 
             if (user.password.equals(password)) {
                 Logger.info("loginUser.id %s", user.id.toString());
-                renderText("ok");
+
+                renderJSON("{\"messages\": \"ok\"}");
 
             } else {
-                Logger.info("loginUser.id  null");
-                renderText("badPassword");
+
+                renderJSON("{\"messages\": \"badPassword\"}");
             }
         }else{
 
-            renderText("badEmail");
+            renderJSON("{\"messages\": \"badEmail\"}");
         }
 
     }
