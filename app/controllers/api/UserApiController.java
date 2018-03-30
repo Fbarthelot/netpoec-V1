@@ -58,18 +58,4 @@ public class UserApiController extends Controller {
     }
 
 
-//    public static void profil ( String email , String password, String firstname, String lastname){
-//
-//        User user = UserService.createUser(String email , String password, String firstname, String lastname);
-//        renderJSON(user);
-//
-//    }
-
-//    public static void userCreate (String email, String password, String firstname, String lastname){
-//
-//        User user = UserService.createUser()
-//        renderJSON(user);
-//        //user.save();
-//    }
-
 }
