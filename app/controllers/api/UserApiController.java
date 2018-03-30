@@ -53,7 +53,7 @@ public class UserApiController extends Controller {
 
         user.delete();
 
-        renderText("userDelete ");
+        renderJSON("{\"messages\": \"userDeleted\"}");
 
     }
 
@@ -67,12 +67,20 @@ public class UserApiController extends Controller {
             int client = UserService.createUser(email, password, firstname, lastname);
             Logger.info("userCreate.email %s", email);
 
-            renderText("userCreate");
+            renderJSON("{\"messages\": \"userCreated\"}");
 
 
-        }else{renderText("userExist");}
+        }else{
+            renderJSON("{\"messages\": \"userAlreadyExist\"}");
+        }
 
 
+
+    }
+
+    public static void profil(String email){
+        User user = UserService.getByEmail(email);
+        renderJSON(user,UserAdapter.get());
 
     }
 
