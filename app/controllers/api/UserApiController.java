@@ -24,36 +24,40 @@ public class UserApiController extends Controller {
 //            error("Ce profil n'existe pas");
     //    }
 
-    public static void loginUser () {
-            String email = new Gson().fromJson(request.params.get("email"), String.class);
-            String password = new Gson().fromJson(request.params.get("password"), String.class);
-            Logger.info("loginUser.email %s", email);
-            Logger.info("loginUser.password %s", password);
-            User user = UserService.getByEmail(email);
-            notFoundIfNull(user);
+    public static void loginUser() {
+        String email = new Gson().fromJson(request.params.get("email"), String.class);
+        String password = new Gson().fromJson(request.params.get("password"), String.class);
+        Logger.info("loginUser.email %s", email);
+        Logger.info("loginUser.password %s", password);
 
-            if(password.equals(password) ){
+        User user = UserService.getByEmail(email);
+        if (user != null) {
+
+            if (user.password.equals(password)) {
                 Logger.info("loginUser.id %s", user.id.toString());
-                renderJSON("ok");
+                renderText("ok");
 
+            } else {
+                Logger.info("loginUser.id  null");
+                renderText("badPassword");
             }
-            else{
+        }else{
 
-                renderJSON(-1);
-            }
+            renderText("badEmail");
+        }
 
     }
 
-    public static void delete(Long id){
+    public static void delete(Long id) {
         User user = UserService.getById(id);
-        Logger.info("loginUser.id %s",user.id.toString());
+        Logger.info("loginUser.id %s", user.id.toString());
         notFoundIfNull(user);
         Long newId = user.id;
-        String profil= user.firstName;
+        String profil = user.firstName;
 
         user.delete();
 
-        renderText("Votre compte a été supprimé" +" "+profil+". A bientot ");
+        renderText("Votre compte a été supprimé" + " " + profil + ". A bientot ");
 
     }
 
